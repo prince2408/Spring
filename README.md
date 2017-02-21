@@ -6,6 +6,11 @@ Advantages :
 2. Reduce the amount of boiler plate code , such as initializing object, open/close resources. JDBC template class helps is removing all the boiler plate code that comes with JDBC programming.
 3. Spring framework is divided into several modules, it helps us in keeping our application lightweight. For e.g if we don't need spring transaction management ,we don't need to add that dependency in our project.
 
+Spring Containers:
+-----------------
+contains all the objects and container manages the lifecycle of each object i.e instantiation, destruction, and life cycle of objects
+and uses factory pattern for object creation. Bean factory reads the spring XML of beans to find the requirement of what kind of object needs to be created and then transfer the object to the actual class.
+
 Spring Modules :
 a) Spring context : for dependency injection
 b) Spring AOP :for aspect oriented programming
@@ -20,8 +25,8 @@ IOC vs DI:
 IOC means giving control to the container to get isntance of object is called Inversion of control, means instead of you are creating object using new operator ,let the container do that for you.
 Way of injecting properties to an object is called Dependency Injection.
 
-Spring IOC Container:
---------------------
+Spring IOC Container using Application context:
+-----------------------------------------------
 Ioc is the mechanism to achieve loose-coupling between object dependencies.Spring Ioc container is the program that injects dependencies into an object and make it ready for our use.This container will create the objects, write them together, configure them and manage their complete life cycle from creation till destruction.The container gets its instruction on what object to instantiate , confiure and asemble by reading configuration meteadat provided. Configuration can be provided either by XML, Java annotationaor java code. Types are:
 a) FileSystemXmlApplicationContext: loads the definitions of the beans from an XML file. Here you need to provide the full path of the XML bean configuration file to the constructor.
 b) ClassPathXmlApplicationContext: loads the definitions of the beans from an XML file. Here you do not need to provide the full path of the XML file but you need to set CLASSPATH properly because this container will look bean configuration XML file in CLASSPATH.
