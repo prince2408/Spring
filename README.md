@@ -48,3 +48,11 @@ When a bean is instantiated, it may be required to perform some initialization t
 To define setup and teardown for a bean, we simply declare the <bean> with init-method and/or destroy-method parameters. The init-method attribute specifies a method that is to be called on the bean immediately upon instantiation. Similarly, destroy-method specifies a method that is called just before a bean is removed from the container.
 <bean id="exampleBean"  class="examples.ExampleBean" init-method="init"/>
 <bean id="exampleBean"  class="examples.ExampleBean" destroy-method="destroy"/>
+
+<constructor-arg type="int" value="20"/>
+<constructor-arg index="0" value="20"/>
+<constructor-arg index="1" value="Equilateral"/>
+
+Autowiring:
+--------------
+
