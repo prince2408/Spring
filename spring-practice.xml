@@ -21,12 +21,13 @@ Line class must contain a variable with the name line -->
 	<property name="y" value="0"></property>
 	</bean>
 	
-	<bean id="pointB" class="com.nice.installer.nim.validator.Point">
+	<bean id="pointB" class="com.nice.installer.nim.validator.Point" init-method="initializing" destroy-method="destroyed">
 	<property name="x" value="10" />
 	<property name="y" value="20"></property>
 	</bean>
 
-
+<!-- Bean id is not required for bean post processor -->
+	<bean class="com.nice.installer.nim.validator.DisplayNameBeanPostProcessor"/>
 	
 	
 </beans>
