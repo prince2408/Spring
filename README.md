@@ -56,3 +56,8 @@ To define setup and teardown for a bean, we simply declare the <bean> with init-
 ApplicationContextAware : An interface which provides the context throughout the spring project.
 BeanContextAware : An interface which provides the bean details throughout the spring project.
 
+BeanPostProcessor:
+---------------------
+Classes which tell spring that there are some processes that needs to happen after the initialization of beans, Spring executes this code after initialization of each and every bean.
+Bean PP is a separate class and method of this class run on each and every bean initialization.
+Used to extend the functinality of the product.
