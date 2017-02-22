@@ -1,17 +1,21 @@
 package com.nice.installer.nim.validator;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.FileSystemXmlApplicationContext;
-
-public class Line {
+/**
+ * look-up method : when you need to inject a prototype-scoped bean in a singleton-scoped bean.
+ *  Since singletons are created (and then injected) during context creation:
+ * @author abhkumar
+ *
+ */
+public abstract class Line {
 
 	Point pointA;
 	Point pointB;
 	
-	
+	 protected abstract Point createPrototype();
 	
 	public Point getPointA() {
-		return pointA;
+		
+		return createPrototype();
 	}
 
 
