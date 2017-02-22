@@ -7,6 +7,7 @@
 <!-- Below is the example of byName is which name of the bean has to be same as name of the member variable
 Line class must contain a variable with the name line -->
 	<bean id="line" class="com.nice.installer.nim.validator.Line" autowire="byName">
+	<lookup-method name="createPrototype" bean="pointA" />
 	</bean>
 	
 	<!--2. Autowiring byType : This works when we have only one bean of each type, it looks for complete package
@@ -15,7 +16,7 @@ Line class must contain a variable with the name line -->
 	<!-- 3. Autowiring by constructor : work as AutowiringByType only but instead of using setter it uses 
 	constructor -->
 	
-	<bean id="pointA" class="com.nice.installer.nim.validator.Point">
+	<bean id="pointA" class="com.nice.installer.nim.validator.Point" scope="prototype">
 	<property name="x" value="0" />
 	<property name="y" value="0"></property>
 	</bean>
@@ -24,6 +25,7 @@ Line class must contain a variable with the name line -->
 	<property name="x" value="10" />
 	<property name="y" value="20"></property>
 	</bean>
+
 
 	
 	
