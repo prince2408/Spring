@@ -53,6 +53,6 @@ To define setup and teardown for a bean, we simply declare the <bean> with init-
 <constructor-arg index="0" value="20"/>
 <constructor-arg index="1" value="Equilateral"/>
 
-Autowiring:
---------------
+ApplicationContextAware : An interface which provides the context throughout the spring project.
+BeanContextAware : An interface which provides the bean details throughout the spring project.
 
