@@ -61,3 +61,12 @@ BeanPostProcessor:
 Classes which tell spring that there are some processes that needs to happen after the initialization of beans, Spring executes this code after initialization of each and every bean.
 Bean PP is a separate class and method of this class run on each and every bean initialization.
 Used to extend the functinality of the product.
+
+Miscellaneous:
+----------------
+DispatcherServlet :  is the front controller in the Spring MVC application and it loads the spring bean configuration file and initialize all the beans that are configured. If annotations are enabled, it also scans the packages and configure any bean annotated with @Component, @Controller, @Repository or @Service annotations.
+
+ContextLoaderListener :  is the listener to start up and shut down Spring’s root WebApplicationContext. It’s important functions are to tie up the lifecycle of ApplicationContext to the lifecycle of the ServletContext and to automate the creation of ApplicationContext. We can use it to define shared beans that can be used across different spring contexts.
+
+Exception Handling in Spring MVC:
+------------------------------------
