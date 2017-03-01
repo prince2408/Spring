@@ -79,38 +79,6 @@ Spring-Hibernate integration:
 ----------------------------------
 PersonDao --> interface, PersonDaoImpl, Person POJO--> responsible to create table as well using annotations @Entity, @Table etc.
 Main () --> to create the application context.
-changes for spring.xml:
--------------------------
-<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"	destroy-method="close">
-		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/TestDB" />
-		<property name="username" value="pankaj" />
-		<property name="password" value="pankaj123" />
-	</bean>
 
-<bean id="personDAO" class="com.journaldev.dao.PersonDAOImpl">
-		<property name="sessionFactory" ref="sessionFactoryBean" />
-	</bean>
-
-
- <bean id="sessionFactoryBean"
-		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
-		<property name="dataSource" ref="dataSource" />
-		<property name="annotatedClasses">
-			<list>
-				<value>com.journaldev.model.Person</value>
-			</list>
-		</property>
-		<property name="hibernateProperties">
-			<props>
-				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
-				<prop key="hibernate.current_session_context_class">thread</prop>
-				<prop key="hibernate.show_sql">false</prop>
-			</props>
-		</property>
-	</bean>
-  
-  
-  
   
 
