@@ -68,5 +68,11 @@ DispatcherServlet :  is the front controller in the Spring MVC application and i
 
 ContextLoaderListener :  is the listener to start up and shut down Spring’s root WebApplicationContext. It’s important functions are to tie up the lifecycle of ApplicationContext to the lifecycle of the ServletContext and to automate the creation of ApplicationContext. We can use it to define shared beans that can be used across different spring contexts.
 
-Exception Handling in Spring MVC:
-------------------------------------
+Other Important Points:
+-------------------------
+1) Following design pattern has been used in spring framework:
+a) Factory Pattern: Bean Factory classes
+b) Prototype Pattern : Bean scope
+c) Singleton Pattern : Creating beans with default scope.
+
+
