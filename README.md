@@ -80,5 +80,27 @@ Spring-Hibernate integration:
 PersonDao --> interface, PersonDaoImpl, Person POJO--> responsible to create table as well using annotations @Entity, @Table etc.
 Main () --> to create the application context.
 
+Spring MVC:
+---------------
+How would you relate Spring MVC Framework to MVC architecture?
+
+As the name suggests Spring MVC is built on top of Model-View-Controller architecture. DispatcherServlet is the Front Controller in the Spring MVC application that takes care of all the incoming requests and delegate it to different controller handler methods.
+
+Model can be any Java Bean in the Spring Framework, just like any other MVC framework Spring provides automatic binding of form data to java beans. We can set model beans as attributes to be used in the view pages.
+
+View Pages can be JSP, static HTMLs etc. and view resolvers are responsible for finding the correct view page. Once the view page is identified, control is given back to the DispatcherServlet controller. DispatcherServlet is responsible for rendering the view and returning the final response to the client.
+
+
+View Resolver: 
+View Resolver implementations are used to resolve view pages by name. InternalResourceViewResolver is one of the implementation of view resolver interface and we are providing the view pages direcoty and suffix location through the bean properties.So if a controller handler method returns "home".view resolver will use view page located at /WEB-INF/views/home.jsp
+
+<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<beans:property name="prefix" value="/WEB-INF/views/" />
+	<beans:property name="suffix" value=".jsp" />
   
+DispatcherServlet is the front controller in the Spring MVC application and it loads the spring bean configuration file and initialize all the beans that are configured. If annotations are enabled, it also scans the packages and configure any bean annotated with @Component, @Controller, @Repository or @Service annotations.
+
+ContextLoaderListener is the listener to start up and shut down Spring’s root WebApplicationContext. It’s important functions are to tie up the lifecycle of ApplicationContext to the lifecycle of the ServletContext and to automate the creation of ApplicationContext. We can use it to define shared beans that can be used across different spring contexts.
+  
+</beans:bean>
 
